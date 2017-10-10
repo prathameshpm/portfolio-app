@@ -21,6 +21,7 @@ import MenuItemSix from './components/MenuItemSix';
 import NotFound from './components/NotFound';
 
 import {
+  lightBlue100,
   blue500,
   orange800,
   yellowA700,
@@ -44,19 +45,27 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
+        {/* <div>
           <MuiThemeProvider>
             <div>
-              <Animated animationIn="pulse">
-                <div>
-                  <Paper zDepth={5} rounded={false} style={{height: '30vh', width: '95vw', textAlign: 'center', margin: '2.5vw', backgroundColor: deepPurple400}}>
+          <Animated animationIn="fadeInDown">
+          <div>
+          <Paper zDepth={5} rounded={false} style={{backgroundColor: lightBlue100}}>
+          <div className="row">
+          <div className="col m11">
+          <h4>Welcome To My Portfolio</h4>
+          </div>
 
-                  </Paper>
-                </div>
-              </Animated>
+          <div className="col m1">
+          <a><img className="responsive-image" width="100%" src={require('./images/photo.jpg')} alt="Prathamesh Mahamulkar" title="Prathamesh Mahamulkar" /></a>
+          </div>
+          </div>
+          </Paper>
+          </div>
+          </Animated>
             </div>
           </MuiThemeProvider>
-        </div>
+        </div> */}
         <BrowserRouter>
           <div>
             <MuiThemeProvider>

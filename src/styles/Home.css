@@ -1,0 +1,24 @@
+h5 {
+  font-weight: bold;
+  font-stretch: expanded;
+  font-family: Roboto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  color: indigo;
+}
+
+.landingPage {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  height: 100vh;
+  background-image: url('../images/img_two.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
