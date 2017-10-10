@@ -1,7 +1,8 @@
 h5 {
-  font-weight: bold;
+  /*font-weight: bold;*/
   font-stretch: expanded;
   font-family: Roboto;
+  font-size: 2.4em;
   margin: 0;
   padding: 0;
   position: relative;
@@ -13,8 +14,8 @@ h5 {
   margin: 0;
   padding: 0;
   background-size: cover;
-  height: 100vh;
-  background-image: url('../images/img_two.jpeg');
+  height: 92vh;
+  background-image: url('../images/img_three.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   display: flex;

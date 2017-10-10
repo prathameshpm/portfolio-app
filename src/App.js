@@ -3,16 +3,15 @@ import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import Paper from 'material-ui/Paper';
+import Avatar from 'material-ui/Avatar';
 
 import { Animated } from "react-animated-css";
 import './styles/App.css';
 
 import Home from './components/Home';
-import MenuItemOne from './components/MenuItemOne';
+import Portfolio from './components/Portfolio';
 import MenuItemTwo from './components/MenuItemTwo';
 import MenuItemThree from './components/MenuItemThree';
 import MenuItemFour from './components/MenuItemFour';
@@ -31,6 +30,8 @@ import {
   purpleA700
 } from 'material-ui/styles/colors';
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -45,27 +46,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <div>
-          <MuiThemeProvider>
-            <div>
-          <Animated animationIn="fadeInDown">
-          <div>
-          <Paper zDepth={5} rounded={false} style={{backgroundColor: lightBlue100}}>
-          <div className="row">
-          <div className="col m11">
-          <h4>Welcome To My Portfolio</h4>
-          </div>
-
-          <div className="col m1">
-          <a><img className="responsive-image" width="100%" src={require('./images/photo.jpg')} alt="Prathamesh Mahamulkar" title="Prathamesh Mahamulkar" /></a>
-          </div>
-          </div>
-          </Paper>
-          </div>
-          </Animated>
-            </div>
-          </MuiThemeProvider>
-        </div> */}
         <BrowserRouter>
           <div>
             <MuiThemeProvider>
@@ -73,10 +53,10 @@ class App extends Component {
                 <Animated animationIn="fadeInUp">
                   <div>
                     <AppBar
-                      title="Menu"
+                      title="MENU"
                       iconClassNameRight="muidocs-icon-navigation-expand-more"
                       onLeftIconButtonTouchTap={() => this.setState({open: !this.state.open})}
-                      style={{backgroundColor: deepPurple400}}
+                      style={{backgroundColor: deepPurple400, height: '8vh'}}
                     />
                   </div>
                 </Animated>
@@ -87,23 +67,24 @@ class App extends Component {
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({open})}
                     zDepth={1}
-                    width={280}
+                    width={140}
                   >
+
+                    <MenuItem disabled={true}>
+                      <Avatar src={require('./images/photo.jpg')} size={100} />
+                    </MenuItem>
+
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: deepPurple400}}>
                         HOME
                       </MenuItem>
                     </NavLink>
 
-                    <Divider />
-
-                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem1'>
+                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/portfolio'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: yellowA700}}>
-                        MENU ITEM 1
+                        PORTFOLIO
                       </MenuItem>
                     </NavLink>
-
-                    <Divider />
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem2'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: red500}}>
@@ -111,15 +92,11 @@ class App extends Component {
                       </MenuItem>
                     </NavLink>
 
-                    <Divider />
-
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem3'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: lightGreen800}}>
                         MENU ITEM 3
                       </MenuItem>
                     </NavLink>
-
-                    <Divider />
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem4'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: orange800}}>
@@ -127,15 +104,11 @@ class App extends Component {
                       </MenuItem>
                     </NavLink>
 
-                    <Divider />
-
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem5'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: purpleA700}}>
                         MENU ITEM 5
                       </MenuItem>
                     </NavLink>
-
-                    <Divider />
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem6'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: blue500}}>
@@ -147,7 +120,7 @@ class App extends Component {
 
                   <Switch>
                     <Route exact path='/' component={Home} />
-                    <Route exact path='/menuitem1' component={MenuItemOne}/>
+                    <Route exact path='/portfolio' component={Portfolio}/>
                     <Route exact path='/menuitem2' component={MenuItemTwo} />
                     <Route exact path='/menuitem3' component={MenuItemThree} />
                     <Route exact path='/menuitem4' component={MenuItemFour} />

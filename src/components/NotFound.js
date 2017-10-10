@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, NavLink, Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
-import MenuItemOne from './MenuItemOne';
+import Portfolio from './Portfolio';
 import MenuItemTwo from './MenuItemTwo';
 import MenuItemThree from './MenuItemThree';
 import MenuItemFour from './MenuItemFour';
@@ -19,7 +19,7 @@ class NotFound extends Component {
           <h3>OR</h3>
           <p>Click on one of the following links:</p>
           <NavLink to='/'><p>HOME</p></NavLink>
-          <NavLink to='/menuitem1'><p>MENU ITEM 1</p></NavLink>
+          <NavLink to='/portfolio'><p>PORTFOLIO</p></NavLink>
           <NavLink to='/menuitem2'><p>MENU ITEM 2</p></NavLink>
           <NavLink to='/menuitem3'><p>MENU ITEM 3</p></NavLink>
           <NavLink to='/menuitem4'><p>MENU ITEM 4</p></NavLink>
@@ -28,7 +28,7 @@ class NotFound extends Component {
 
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/menuitem1' component={MenuItemOne}/>
+            <Route exact path='/portfolio' component={Portfolio}/>
             <Route exact path='/menuitem2' component={MenuItemTwo} />
             <Route exact path='/menuitem3' component={MenuItemThree} />
             <Route exact path='/menuitem4' component={MenuItemFour} />
