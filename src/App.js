@@ -20,7 +20,6 @@ import MenuItemSix from './components/MenuItemSix';
 import NotFound from './components/NotFound';
 
 import {
-  lightBlue100,
   blue500,
   orange800,
   yellowA700,
@@ -56,7 +55,7 @@ class App extends Component {
                       title="MENU"
                       iconClassNameRight="muidocs-icon-navigation-expand-more"
                       onLeftIconButtonTouchTap={() => this.setState({open: !this.state.open})}
-                      style={{backgroundColor: deepPurple400, height: '8vh'}}
+                      style={{backgroundColor: '#616161', height: '8vh'}}
                     />
                   </div>
                 </Animated>

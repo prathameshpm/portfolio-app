@@ -31,11 +31,11 @@ class MenuItemSix extends Component {
         <RaisedButton
           onClick={this.handleTouchTap}
           primary={true}
-          label="Click Me Please"
+          label="Click Here to see Snackbar"
         />
         <Snackbar
           open={this.state.openSnackBar}
-          message="Thank You"
+          message="This is a Snackbar Feature"
           autoHideDuration={800}
           onRequestClose={this.handleRequestClose}
           style={{textAlign: 'center'}}
