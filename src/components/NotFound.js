@@ -3,11 +3,10 @@ import { BrowserRouter, NavLink, Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
 import Portfolio from './Portfolio';
-import MenuItemTwo from './MenuItemTwo';
 import MenuItemThree from './MenuItemThree';
 import MenuItemFour from './MenuItemFour';
-import MenuItemFive from './MenuItemFive';
-import MenuItemSix from './MenuItemSix';
+import UpNext from './UpNext';
+import Contact from './Contact';
 
 class NotFound extends Component {
   render() {
@@ -20,20 +19,18 @@ class NotFound extends Component {
           <p>Click on one of the following links:</p>
           <NavLink to='/'><p>HOME</p></NavLink>
           <NavLink to='/portfolio'><p>PORTFOLIO</p></NavLink>
-          <NavLink to='/menuitem2'><p>MENU ITEM 2</p></NavLink>
           <NavLink to='/menuitem3'><p>MENU ITEM 3</p></NavLink>
           <NavLink to='/menuitem4'><p>MENU ITEM 4</p></NavLink>
-          <NavLink to='/menuitem5'><p>MENU ITEM 5</p></NavLink>
-          <NavLink to='/menuitem6'><p>MENU ITEM 6</p></NavLink>
+          <NavLink to='/soontocome'><p>UP NEXT</p></NavLink>
+          <NavLink to='/contact'><p>CONTACT</p></NavLink>
 
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/portfolio' component={Portfolio}/>
-            <Route exact path='/menuitem2' component={MenuItemTwo} />
             <Route exact path='/menuitem3' component={MenuItemThree} />
             <Route exact path='/menuitem4' component={MenuItemFour} />
-            <Route exact path='/menuitem5' component={MenuItemFive} />
-            <Route exact path='/menuitem6' component={MenuItemSix} />
+            <Route exact path='/soontocome' component={UpNext} />
+            <Route exact path='/contact' component={Contact} />
           </Switch>
         </div>
       </BrowserRouter>

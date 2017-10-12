@@ -12,11 +12,10 @@ import './styles/App.css';
 
 import Home from './components/Home';
 import Portfolio from './components/Portfolio';
-import MenuItemTwo from './components/MenuItemTwo';
 import MenuItemThree from './components/MenuItemThree';
 import MenuItemFour from './components/MenuItemFour';
-import MenuItemFive from './components/MenuItemFive';
-import MenuItemSix from './components/MenuItemSix';
+import UpNext from './components/UpNext';
+import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 
 import {
@@ -85,9 +84,9 @@ class App extends Component {
                       </MenuItem>
                     </NavLink>
 
-                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem2'>
+                    <NavLink className='drawerItemsStyle' activeClassName="active" target="_blank" to='https://github.com/prathameshpm/portfolio-app'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: red500}}>
-                        MENU ITEM 2
+                        SOURCE CODE
                       </MenuItem>
                     </NavLink>
 
@@ -103,15 +102,15 @@ class App extends Component {
                       </MenuItem>
                     </NavLink>
 
-                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem5'>
+                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/soontocome'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: purpleA700}}>
-                        MENU ITEM 5
+                        UP NEXT
                       </MenuItem>
                     </NavLink>
 
-                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem6'>
+                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/contact'>
                       <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: blue500}}>
-                        MENU ITEM 6
+                        CONTACT
                       </MenuItem>
                     </NavLink>
 
@@ -120,11 +119,10 @@ class App extends Component {
                   <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/portfolio' component={Portfolio}/>
-                    <Route exact path='/menuitem2' component={MenuItemTwo} />
                     <Route exact path='/menuitem3' component={MenuItemThree} />
                     <Route exact path='/menuitem4' component={MenuItemFour} />
-                    <Route exact path='/menuitem5' component={MenuItemFive} />
-                    <Route exact path='/menuitem6' component={MenuItemSix} />
+                    <Route exact path='/soontocome' component={UpNext} />
+                    <Route exact path='/contact' component={Contact} />
                     <Route component={NotFound}/>
                   </Switch>
 

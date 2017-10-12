@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class MenuItemFive extends Component {
+class UpNext extends Component {
   render() {
     return (
       <div>
@@ -12,4 +12,4 @@ class MenuItemFive extends Component {
   }
 }
 
-export default MenuItemFive;
+export default UpNext;
