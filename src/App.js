@@ -12,11 +12,18 @@ import './styles/App.css';
 
 import Home from './components/Home';
 import Portfolio from './components/Portfolio';
-import MenuItemThree from './components/MenuItemThree';
-import MenuItemFour from './components/MenuItemFour';
+import Resume from './components/Resume';
+import Skills from './components/Skills';
 import UpNext from './components/UpNext';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
+
+import ContentLink from 'material-ui/svg-icons/content/link';
+import PictureAsPdf from 'material-ui/svg-icons/image/picture-as-pdf';
+import Photo from 'material-ui/svg-icons/image/photo';
+import ContactPhone from 'material-ui/svg-icons/communication/contact-phone';
+import HomeIcon from 'material-ui/svg-icons/action/home';
+import Star from 'material-ui/svg-icons/toggle/star';
 
 import {
   blue500,
@@ -27,8 +34,6 @@ import {
   deepPurple400,
   purpleA700
 } from 'material-ui/styles/colors';
-
-
 
 class App extends Component {
   constructor(props) {
@@ -65,7 +70,7 @@ class App extends Component {
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({open})}
                     zDepth={1}
-                    width={140}
+                    width={240}
                   >
 
                     <MenuItem disabled={true}>
@@ -73,32 +78,32 @@ class App extends Component {
                     </MenuItem>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: deepPurple400}}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: deepPurple400}} rightIcon={<HomeIcon />}>
                         HOME
                       </MenuItem>
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/portfolio'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: yellowA700}}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: yellowA700}} rightIcon={<Photo />}>
                         PORTFOLIO
                       </MenuItem>
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" target="_blank" to='https://github.com/prathameshpm/portfolio-app'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: red500}}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: red500}} rightIcon={<ContentLink />}>
                         SOURCE CODE
                       </MenuItem>
                     </NavLink>
 
-                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem3'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: lightGreen800}}>
-                        MENU ITEM 3
+                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/resume'>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: lightGreen800}} rightIcon={<PictureAsPdf />}>
+                        RESUME
                       </MenuItem>
                     </NavLink>
 
-                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/menuitem4'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: orange800}}>
-                        MENU ITEM 4
+                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/skills'>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: orange800}} rightIcon={<Star />}>
+                        SKILLS
                       </MenuItem>
                     </NavLink>
 
@@ -109,7 +114,7 @@ class App extends Component {
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/contact'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: blue500}}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: blue500}}  rightIcon={<ContactPhone />}>
                         CONTACT
                       </MenuItem>
                     </NavLink>
@@ -119,8 +124,8 @@ class App extends Component {
                   <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/portfolio' component={Portfolio}/>
-                    <Route exact path='/menuitem3' component={MenuItemThree} />
-                    <Route exact path='/menuitem4' component={MenuItemFour} />
+                    <Route exact path='/resume' component={Resume} />
+                    <Route exact path='/skills' component={Skills} />
                     <Route exact path='/soontocome' component={UpNext} />
                     <Route exact path='/contact' component={Contact} />
                     <Route component={NotFound}/>

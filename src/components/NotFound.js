@@ -3,8 +3,8 @@ import { BrowserRouter, NavLink, Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
 import Portfolio from './Portfolio';
-import MenuItemThree from './MenuItemThree';
-import MenuItemFour from './MenuItemFour';
+import Resume from './Resume';
+import Skills from './Skills';
 import UpNext from './UpNext';
 import Contact from './Contact';
 
@@ -19,16 +19,16 @@ class NotFound extends Component {
           <p>Click on one of the following links:</p>
           <NavLink to='/'><p>HOME</p></NavLink>
           <NavLink to='/portfolio'><p>PORTFOLIO</p></NavLink>
-          <NavLink to='/menuitem3'><p>MENU ITEM 3</p></NavLink>
-          <NavLink to='/menuitem4'><p>MENU ITEM 4</p></NavLink>
+          <NavLink to='/resume'><p>RESUME</p></NavLink>
+          <NavLink to='/skills'><p>SKILLS</p></NavLink>
           <NavLink to='/soontocome'><p>UP NEXT</p></NavLink>
           <NavLink to='/contact'><p>CONTACT</p></NavLink>
 
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/portfolio' component={Portfolio}/>
-            <Route exact path='/menuitem3' component={MenuItemThree} />
-            <Route exact path='/menuitem4' component={MenuItemFour} />
+            <Route exact path='/resume' component={Resume} />
+            <Route exact path='/skills' component={Skills} />
             <Route exact path='/soontocome' component={UpNext} />
             <Route exact path='/contact' component={Contact} />
           </Switch>
