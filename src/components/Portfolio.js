@@ -10,9 +10,6 @@ import {
   CardText
 } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
-import SwipeableViews from 'react-swipeable-views';
-import {Tabs, Tab} from 'material-ui/Tabs';
-import {GridList, GridTile} from 'material-ui/GridList';
 import Lightbox from 'react-image-lightbox';
 
 import '../styles/Portfolio.css';
@@ -40,75 +37,11 @@ const styles = {
   slide: {
     padding: 10,
   },
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    margin: 20,
-    padding: 10
-  },
-  gridList: {
-    display: 'flex',
-    flexWrap: 'nowrap',
-    overflowX: 'auto',
-  },
   card: {
     margin: 20,
     padding: 10
   }
 };
-
-const tilesData = [
-  {
-    img: sp_01,
-    title: 'Home Page',
-  },
-  {
-    img: sp_02,
-    title: 'Added to Cart',
-  },
-  {
-    img: sp_03,
-    title: 'Invalid Credentials',
-  },
-  {
-    img: sp_04,
-    title: 'User Profile',
-  },
-  {
-    img: sp_05,
-    title: 'Cart',
-  },
-  {
-    img: sp_06,
-    title: 'Payments Page',
-  },
-  {
-    img: sp_07,
-    title: 'Cart',
-  },
-  {
-    img: sp_08,
-    title: 'User Profile',
-  },
-  {
-    img: sp_09,
-    title: 'User Orders in DB',
-  },
-  {
-    img: sp_10,
-    title: 'User Orders in DB',
-  },
-  {
-    img: sp_11,
-    title: 'Stripe My Account',
-  },
-  {
-    img: sp_12,
-    title: 'Payment IDs',
-  },
-];
-
 
 const images = [
   sp_01,
@@ -123,7 +56,6 @@ const images = [
   sp_10,
   sp_11,
   sp_12,
-
 ];
 
 

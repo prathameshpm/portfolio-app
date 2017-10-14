@@ -1,11 +1,11 @@
-.shoppingCart {
-  background-image: url('../images/grass.jpg');
+.skillsBackground {
+  background-image: url('../images/round.png');
   position: relative;
   background-repeat: repeat;
   height: 92vh;
 }
 
-.shoppingCart:before {
+.skillsBackground:before {
   content: '';
   position: absolute;
   top: 0;
