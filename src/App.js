@@ -24,6 +24,7 @@ import Photo from 'material-ui/svg-icons/image/photo';
 import ContactPhone from 'material-ui/svg-icons/communication/contact-phone';
 import HomeIcon from 'material-ui/svg-icons/action/home';
 import Star from 'material-ui/svg-icons/toggle/star';
+import Forward from 'material-ui/svg-icons/content/forward';
 
 import {
   blue500,
@@ -70,11 +71,11 @@ class App extends Component {
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({open})}
                     zDepth={1}
-                    width={240}
+                    width={220}
                   >
 
-                    <MenuItem disabled={true}>
-                      <Avatar src={require('./images/photo.jpg')} size={100} />
+                    <MenuItem disabled={true} style={{textAlign: 'center'}}>
+                      <Avatar src={require('./images/photo.jpg')} size={100} style={{marginTop: 25}} />
                     </MenuItem>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/'>
@@ -108,7 +109,7 @@ class App extends Component {
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/soontocome'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: purpleA700}}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: purpleA700}} rightIcon={<Forward />}>
                         UP NEXT
                       </MenuItem>
                     </NavLink>

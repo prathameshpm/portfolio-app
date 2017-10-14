@@ -13,6 +13,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import SwipeableViews from 'react-swipeable-views';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import {GridList, GridTile} from 'material-ui/GridList';
+import Lightbox from 'react-image-lightbox';
 
 import '../styles/Portfolio.css';
 
@@ -43,12 +44,18 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    margin: 20,
+    padding: 10
   },
   gridList: {
     display: 'flex',
     flexWrap: 'nowrap',
     overflowX: 'auto',
   },
+  card: {
+    margin: 20,
+    padding: 10
+  }
 };
 
 const tilesData = [
@@ -102,11 +109,31 @@ const tilesData = [
   },
 ];
 
+
+const images = [
+  sp_01,
+  sp_02,
+  sp_03,
+  sp_04,
+  sp_05,
+  sp_06,
+  sp_07,
+  sp_08,
+  sp_09,
+  sp_10,
+  sp_11,
+  sp_12,
+
+];
+
+
 class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
       slideIndex: 0,
+      photoIndex: 0,
+      isOpen: false
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -118,129 +145,141 @@ class Portfolio extends Component {
   };
 
   render() {
+    const {
+        photoIndex,
+        isOpen,
+    } = this.state;
+
     return (
       <div>
         <Animated animationIn="lightSpeedIn">
-          <div className="tabOneStyle">
+          {/* <div>
             <Tabs
               onChange={this.handleChange}
               value={this.state.slideIndex}
             >
               <Tab label="Shopping Cart" value={0} />
-              <Tab label="Tab Two" value={1} />
+              <Tab label="To Do API" value={1} />
               <Tab label="Tab Three" value={2} />
             </Tabs>
             <SwipeableViews
               index={this.state.slideIndex}
               onChangeIndex={this.handleChange}
-            >
-              <div>
-                <div className="row">
-                  <div className="col m3"></div>
-                  <div className="col m6">
-                    <Card>
-                      <CardHeader
-                        title="Shopping Cart"
-                        subtitle="A mini E-Shop"
-                        avatar={require("../images/node.jpeg")}
-                      />
-                      <CardMedia>
-                        <img src={sp_01} alt="Home" />
-                      </CardMedia>
-                      <CardTitle title="TechStack Used" subtitle="Nodejs, MongoDB, Stripe" />
-                      <CardText>
-                        <p>* Created A Mini E-Shoppee using Node.js & ExpressGenerator</p>
-                        <p>* Used MongoDB & Mongoose for Users Data, Orders Data and Products Data Storage</p>
-                        <p>* PassportJS for Validity Check</p>
-                        <p>* StripeAPI for Payments</p>
-                        <p>* Github for Version Control</p>
-                        <p>Project Inspired from SchwarzMueller</p>
-                      </CardText>
-                      <CardActions>
-                        <RaisedButton primary={true} label="Source Code" target="_blank" href="https://github.com/prathameshpm/shopping-cart" />
-                        <RaisedButton secondary={true} label="Visit Website" target='_blank' href="https://hidden-tor-96232.herokuapp.com/" />
-                      </CardActions>
-                    </Card>
-                  </div>
-                  <div className="col m3"></div>
-                </div>
+          > */}
+          <div className="shoppingCart">
 
-                <div className="container">
-
-                  <div style={styles.root}>
-                    <GridList style={styles.gridList} cols={2.2}>
-                      {tilesData.map((tile) => (
-                        <GridTile
-                          key={tile.img}
-                          title={tile.title}
-                          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-                        >
-                          <img src={tile.img} alt={tile.title} />
-                        </GridTile>
-                      ))}
-                    </GridList>
-                  </div>
-
-                </div>
-
+            <div className="row">
+              <div className="col m1"></div>
+              <div className="col m4">
+                <Card style={styles.card}>
+                  <CardHeader
+                    title="Shopping Cart"
+                    subtitle="A mini E-Shop"
+                    avatar={require("../images/node.jpeg")}
+                  />
+                  <CardMedia>
+                    <img src={sp_01} alt="Home" />
+                  </CardMedia>
+                  <CardTitle title="TechStack Used" subtitle="Nodejs, MongoDB, Stripe" />
+                  <CardText>
+                    <p>* Created A Mini E-Shoppee using Node.js & ExpressGenerator</p>
+                    <p>* Used MongoDB & Mongoose for Users Data, Orders Data and Products Data Storage</p>
+                    <p>* PassportJS for Validity Check</p>
+                    <p>* StripeAPI for Payments</p>
+                    <p>* Github for Version Control</p>
+                    <p>Project Inspired from SchwarzMueller</p>
+                    <p>Use card number: "4242424242424242" for testing (Or any other valid demo number as prescribed in Stripe Documentation)</p>
+                  </CardText>
+                  <CardActions>
+                    <RaisedButton primary={true} label="Source Code" target="_blank" href="https://github.com/prathameshpm/shopping-cart" />
+                    <RaisedButton secondary={true} label="Visit Website" target='_blank' href="https://hidden-tor-96232.herokuapp.com/" />
+                    <RaisedButton default={true} label="Screen Shots" onClick={() => this.setState({ isOpen: true })} />
+                  </CardActions>
+                </Card>
               </div>
+            </div>
 
-              <div style={styles.slide}>
-                <div className="row">
-                  <div className="col m3"></div>
-                  <div className="col m6">
-                    <Card>
-                      <CardHeader
-                        title="To-Do API"
-                        subtitle="API Built using MEN Stack"
-                        avatar={require("../images/postman.png")}
-                      />
-                      <CardMedia
-                        overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-                      >
-                        <img src={require("../images/img_one.jpeg")} alt="somehting" />
-                      </CardMedia>
-                      <CardTitle title="TechStack Used" subtitle="Express Node MongoDB POSTMAN" />
-                      <CardText>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                        Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                        Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                      </CardText>
-                      <CardActions>
-                        <RaisedButton primary={true} label="Source Code" />
-                        <RaisedButton secondary={true} label="Visit Website" />
-                      </CardActions>
-                    </Card>
-                  </div>
-                  <div className="col m3"></div>
-                </div>
+            <div>
+              {isOpen &&
+                <Lightbox
+                  mainSrc={images[photoIndex]}
+                  nextSrc={images[(photoIndex + 1) % images.length]}
+                  prevSrc={images[(photoIndex + images.length - 1) % images.length]}
 
-                <div className="container">
+                  onCloseRequest={() => this.setState({ isOpen: false })}
+                  onMovePrevRequest={() => this.setState({
+                    photoIndex: (photoIndex + images.length - 1) % images.length,
+                  })}
+                  onMoveNextRequest={() => this.setState({
+                    photoIndex: (photoIndex + 1) % images.length,
+                  })}
+                />
+              }
+            </div>
 
-                  <div style={styles.root}>
-                    <GridList style={styles.gridList} cols={2.2}>
-                      {tilesData.map((tile) => (
-                        <GridTile
-                          key={tile.img}
-                          title={tile.title}
-                          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-                        >
-                          <img src={tile.img} alt={tile.title} />
-                        </GridTile>
-                      ))}
-                    </GridList>
-                  </div>
-
-                </div>
-
-              </div>
-              <div style={styles.slide}>
-                slide n°3
-              </div>
-            </SwipeableViews>
           </div>
+          {/*
+            <div style={styles.slide}>
+            <div className="row">
+              <div className="col m3"></div>
+              <div className="col m6">
+            <Card style={styles.card}>
+            <CardHeader
+            title="To-Do API"
+            subtitle="API Built using MEN Stack"
+            avatar={require("../images/postman.png")}
+            />
+            <CardMedia
+            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
+            >
+            <img src={require("../images/img_one.jpeg")} alt="somehting" />
+            </CardMedia>
+            <CardTitle title="TechStack Used" subtitle="Express Node MongoDB POSTMAN" />
+            <CardText>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            </CardText>
+            <CardActions>
+            <RaisedButton primary={true} label="Source Code" />
+            <RaisedButton secondary={true} label="Visit Website" />
+            </CardActions>
+            </Card>
+              </div>
+              <div className="col m3"></div>
+            </div>
+            <div>
+              <button
+            type="button"
+            onClick={() => this.setState({ isOpen: true })}
+              >
+            Open Lightbox
+              </button>
 
+              {isOpen &&
+            <Lightbox
+            mainSrc={images[photoIndex]}
+            nextSrc={images[(photoIndex + 1) % images.length]}
+            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+
+            onCloseRequest={() => this.setState({ isOpen: false })}
+            onMovePrevRequest={() => this.setState({
+            photoIndex: (photoIndex + images.length - 1) % images.length,
+            })}
+            onMoveNextRequest={() => this.setState({
+            photoIndex: (photoIndex + 1) % images.length,
+            })}
+            />
+              }
+            </div>
+            </div>
+            <div style={styles.slide}>
+            slide n°3
+            </div>
+            </SwipeableViews>
+            </div>
+          */}
 
         </Animated>
       </div>
