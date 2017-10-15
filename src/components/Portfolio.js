@@ -15,8 +15,8 @@ import Lightbox from 'react-image-lightbox';
 import '../styles/Portfolio.css';
 
 import sp_01 from '../images/sp_01.jpg';
-import sp_02 from '../images/sp_02.png';
-import sp_03 from '../images/sp_03.png';
+import sp_02 from '../images/sp_02.jpg';
+import sp_03 from '../images/sp_03.jpg';
 import sp_04 from '../images/sp_04.png';
 import sp_05 from '../images/sp_05.png';
 import sp_06 from '../images/sp_06.png';
@@ -41,6 +41,9 @@ import todo11 from '../images/todo11.png';
 import todo12 from '../images/todo12.png';
 import todo13 from '../images/todo13.png';
 import todo14 from '../images/todo14.png';
+
+import chatapp1 from '../images/chatapp1.jpg';
+import chatapp2 from '../images/chatapp2.jpg';
 
 const styles = {
   headline: {
@@ -89,6 +92,10 @@ const imagesTwo = [
   todo14,
 ];
 
+const imagesThree = [
+  chatapp1,
+  chatapp2
+];
 
 class Portfolio extends Component {
   constructor(props) {
@@ -96,8 +103,10 @@ class Portfolio extends Component {
     this.state = {
       photoIndexOne: 0,
       photoIndexTwo: 0,
+      photoIndexThree: 0,
       isOpenOne: false,
-      isOpenTwo: false
+      isOpenTwo: false,
+      isOpenThree: false,
     };
   }
 
@@ -107,6 +116,8 @@ class Portfolio extends Component {
       isOpenOne,
       photoIndexTwo,
       isOpenTwo,
+      photoIndexThree,
+      isOpenThree,
     } = this.state;
 
     return (
@@ -136,9 +147,9 @@ class Portfolio extends Component {
                     <p>Use card number: "4242424242424242" for testing (Or any other valid demo number as prescribed in Stripe Documentation)</p>
                   </CardText>
                   <CardActions>
-                    <RaisedButton primary={true} label="Source Code" target="_blank" href="https://github.com/prathameshpm/shopping-cart" />
-                    <RaisedButton secondary={true} label="Visit Website" target='_blank' href="https://hidden-tor-96232.herokuapp.com/" />
-                    <RaisedButton default={true} label="Screen Shots" onClick={() => this.setState({ isOpenOne: true })} />
+                    <RaisedButton primary={true} label="Source Code" target="_blank" href="https://github.com/prathameshpm/shopping-cart" style={{margin: 10}} />
+                    <RaisedButton secondary={true} label="Visit Website" target='_blank' href="https://hidden-tor-96232.herokuapp.com/" style={{margin: 10}} />
+                    <RaisedButton default={true} label="Screen Shots" onClick={() => this.setState({ isOpenOne: true })} style={{margin: 10}} />
                   </CardActions>
                 </Card>
               </div>
@@ -166,7 +177,7 @@ class Portfolio extends Component {
                   <CardHeader
                     title="To Do API"
                     subtitle="A Project in Nodejs"
-                    avatar={require("../images/postman.png")}
+                    avatar={require("../images/postman.jpg")}
                   />
                   <CardMedia>
                     <img src={todo01} alt="Home" />
@@ -182,8 +193,8 @@ class Portfolio extends Component {
                     <p>* API Link: 'https://thawing-depths-20269.herokuapp.com/'</p>
                   </CardText>
                   <CardActions>
-                    <RaisedButton primary={true} label="Source Code" target="_blank" href="https://github.com/prathameshpm/node-to-do-ppm" />
-                    <RaisedButton secondary={true} label="Screen Shots" onClick={() => this.setState({ isOpenTwo: true })} />
+                    <RaisedButton primary={true} label="Source Code" target="_blank" href="https://github.com/prathameshpm/node-to-do-ppm" style={{margin: 10}} />
+                    <RaisedButton secondary={true} label="Screen Shots" onClick={() => this.setState({ isOpenTwo: true })} style={{margin: 10}} />
                   </CardActions>
                 </Card>
               </div>
@@ -196,7 +207,7 @@ class Portfolio extends Component {
 
                     onCloseRequest={() => this.setState({ isOpenTwo: false })}
                     onMovePrevRequest={() => this.setState({
-                      photoIndex: (photoIndexTwo + imagesTwo.length - 1) % imagesTwo.length,
+                      photoIndexTwo: (photoIndexTwo + imagesTwo.length - 1) % imagesTwo.length,
                     })}
                     onMoveNextRequest={() => this.setState({
                       photoIndexTwo: (photoIndexTwo + 1) % imagesTwo.length,
@@ -205,6 +216,50 @@ class Portfolio extends Component {
                 }
               </div>
               <div className="col m1"></div>
+            </div>
+            <div className="row">
+              <div className="container">
+                <div className="row">
+                  <div className="col m5">
+                    <Card style={styles.card}>
+                      <CardHeader
+                        title="Realtime Chat App"
+                        subtitle="A Project using websockets"
+                        avatar={require("../images/websockets.png")}
+                      />
+                      <CardMedia>
+                        <img src={chatapp1} alt="Home" />
+                      </CardMedia>
+                      <CardTitle title="TechStack Used" subtitle="Nodejs, Express, MongoDB" />
+                      <CardText>
+                        <p>Created using Websockets & geolocation</p>
+                      </CardText>
+                      <CardActions>
+                        <RaisedButton primary={true} label="Source Code" target="_blank" href="https://github.com/prathameshpm/node-to-do-ppm" style={{margin: 10}} />
+                        <RaisedButton secondary={true} label="Visit Website" target='_blank' href="https://fast-reef-48042.herokuapp.com/" style={{margin: 10}} />
+                        <RaisedButton default={true} label="Screen Shots" onClick={() => this.setState({ isOpenThree: true })} style={{margin: 10}} />
+                      </CardActions>
+                    </Card>
+                  </div>
+                  <div>
+                    {isOpenThree &&
+                      <Lightbox
+                        mainSrc={imagesThree[photoIndexThree]}
+                        nextSrc={imagesThree[(photoIndexThree + 1) % imagesThree.length]}
+                        prevSrc={imagesThree[(photoIndexThree + imagesThree.length - 1) % imagesThree.length]}
+
+                        onCloseRequest={() => this.setState({ isOpenThree: false })}
+                        onMovePrevRequest={() => this.setState({
+                          photoIndexThree: (photoIndexThree + imagesThree.length - 1) % imagesThree.length,
+                        })}
+                        onMoveNextRequest={() => this.setState({
+                          photoIndexThree: (photoIndexThree + 1) % imagesThree.length,
+                        })}
+                      />
+                    }
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Animated>

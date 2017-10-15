@@ -48,10 +48,10 @@ class Skills extends Component {
             <div className="container">
               <div>
                 <Paper zDepth={5} style={{textAlign: 'center', margin: 30}}>
-                  <Avatar src={require('../images/html.png')} size={180} style={{margin: 10}} />
-                  <Avatar src={require('../images/css.png')} size={180} style={{margin: 10}} />
-                  <Avatar src={require('../images/bootstrap.png')} size={180} style={{margin: 10}} />
-                  <Avatar src={require('../images/react.png')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/html.jpg')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/css.jpg')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/bootstrap.jpg')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/react.jpg')} size={180} style={{margin: 10}} />
                   <Avatar src={require('../images/redux.png')} size={180} style={{margin: 10}} />
                   <Avatar src={require('../images/material.png')} size={180} style={{margin: 10}} />
                 </Paper>
@@ -68,7 +68,7 @@ class Skills extends Component {
               <div>
                 <Paper zDepth={5} style={{textAlign: 'center', margin: 30}}>
                   <Avatar src={require('../images/terminal.png')} size={180} style={{margin: 10}} />
-                  <Avatar src={require('../images/atom.png')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/atom.jpg')} size={180} style={{margin: 10}} />
                   <Avatar src={require('../images/vscode.png')} size={180} style={{margin: 10}} />
                 </Paper>
               </div>
@@ -91,17 +91,17 @@ class Skills extends Component {
             <div className="container">
               <div>
                 <Paper zDepth={5} style={{textAlign: 'center', margin: 30}}>
-                  <Avatar src={require('../images/node.png')} size={180} style={{margin: 10}} />
-                  <Avatar src={require('../images/express.png')} size={180} style={{margin: 10}} />
-                  <Avatar src={require('../images/mongodb.png')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/node.jpeg')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/express.jpg')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/mongodb.jpg')} size={180} style={{margin: 10}} />
                 </Paper>
               </div>
             </div>
             <div className="container">
               <div>
                 <Paper zDepth={5} style={{textAlign: 'center', margin: 30}}>
-                  <Avatar src={require('../images/github.png')} size={180} style={{margin: 10}} />
-                  <Avatar src={require('../images/heroku.png')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/github.jpg')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/heroku.jpg')} size={180} style={{margin: 10}} />
                   <Avatar src={require('../images/cpanel.png')} size={180} style={{margin: 10}} />
                 </Paper>
               </div>
@@ -110,7 +110,7 @@ class Skills extends Component {
               <div>
                 <Paper zDepth={5} style={{textAlign: 'center', margin: 30}}>
                   <Avatar src={require('../images/gimp.jpg')} size={180} style={{margin: 10}} />
-                  <Avatar src={require('../images/photoshop.png')} size={180} style={{margin: 10}} />
+                  <Avatar src={require('../images/photoshop.jpg')} size={180} style={{margin: 10}} />
                 </Paper>
               </div>
             </div>
