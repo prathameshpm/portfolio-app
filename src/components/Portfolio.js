@@ -27,6 +27,21 @@ import sp_10 from '../images/sp_10.png';
 import sp_11 from '../images/sp_11.png';
 import sp_12 from '../images/sp_12.png';
 
+import todo01 from '../images/todo01.png';
+import todo02 from '../images/todo02.png';
+import todo03 from '../images/todo03.png';
+import todo04 from '../images/todo04.png';
+import todo05 from '../images/todo05.png';
+import todo06 from '../images/todo06.png';
+import todo07 from '../images/todo07.png';
+import todo08 from '../images/todo08.png';
+import todo09 from '../images/todo09.png';
+import todo10 from '../images/todo10.png';
+import todo11 from '../images/todo11.png';
+import todo12 from '../images/todo12.png';
+import todo13 from '../images/todo13.png';
+import todo14 from '../images/todo14.png';
+
 const styles = {
   headline: {
     fontSize: 24,
@@ -43,7 +58,7 @@ const styles = {
   }
 };
 
-const images = [
+const imagesOne = [
   sp_01,
   sp_02,
   sp_03,
@@ -58,48 +73,46 @@ const images = [
   sp_12,
 ];
 
+const imagesTwo = [
+  todo02,
+  todo03,
+  todo04,
+  todo05,
+  todo06,
+  todo07,
+  todo08,
+  todo09,
+  todo10,
+  todo11,
+  todo12,
+  todo13,
+  todo14,
+];
+
 
 class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      slideIndex: 0,
-      photoIndex: 0,
-      isOpen: false
+      photoIndexOne: 0,
+      photoIndexTwo: 0,
+      isOpenOne: false,
+      isOpenTwo: false
     };
-    this.handleChange = this.handleChange.bind(this);
   }
-
-  handleChange = (value) => {
-    this.setState({
-      slideIndex: value,
-    });
-  };
 
   render() {
     const {
-        photoIndex,
-        isOpen,
+      photoIndexOne,
+      isOpenOne,
+      photoIndexTwo,
+      isOpenTwo,
     } = this.state;
 
     return (
       <div>
         <Animated animationIn="lightSpeedIn">
-          {/* <div>
-            <Tabs
-              onChange={this.handleChange}
-              value={this.state.slideIndex}
-            >
-              <Tab label="Shopping Cart" value={0} />
-              <Tab label="To Do API" value={1} />
-              <Tab label="Tab Three" value={2} />
-            </Tabs>
-            <SwipeableViews
-              index={this.state.slideIndex}
-              onChangeIndex={this.handleChange}
-          > */}
           <div className="shoppingCart">
-
             <div className="row">
               <div className="col m1"></div>
               <div className="col m4">
@@ -125,94 +138,75 @@ class Portfolio extends Component {
                   <CardActions>
                     <RaisedButton primary={true} label="Source Code" target="_blank" href="https://github.com/prathameshpm/shopping-cart" />
                     <RaisedButton secondary={true} label="Visit Website" target='_blank' href="https://hidden-tor-96232.herokuapp.com/" />
-                    <RaisedButton default={true} label="Screen Shots" onClick={() => this.setState({ isOpen: true })} />
+                    <RaisedButton default={true} label="Screen Shots" onClick={() => this.setState({ isOpenOne: true })} />
                   </CardActions>
                 </Card>
               </div>
-            </div>
+              <div>
+                {isOpenOne &&
+                  <Lightbox
+                    mainSrc={imagesOne[photoIndexOne]}
+                    nextSrc={imagesOne[(photoIndexOne + 1) % imagesOne.length]}
+                    prevSrc={imagesOne[(photoIndexOne + imagesOne.length - 1) % imagesOne.length]}
 
-            <div>
-              {isOpen &&
-                <Lightbox
-                  mainSrc={images[photoIndex]}
-                  nextSrc={images[(photoIndex + 1) % images.length]}
-                  prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-
-                  onCloseRequest={() => this.setState({ isOpen: false })}
-                  onMovePrevRequest={() => this.setState({
-                    photoIndex: (photoIndex + images.length - 1) % images.length,
-                  })}
-                  onMoveNextRequest={() => this.setState({
-                    photoIndex: (photoIndex + 1) % images.length,
-                  })}
-                />
-              }
-            </div>
-
-          </div>
-          {/*
-            <div style={styles.slide}>
-            <div className="row">
-              <div className="col m3"></div>
-              <div className="col m6">
-            <Card style={styles.card}>
-            <CardHeader
-            title="To-Do API"
-            subtitle="API Built using MEN Stack"
-            avatar={require("../images/postman.png")}
-            />
-            <CardMedia
-            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-            >
-            <img src={require("../images/img_one.jpeg")} alt="somehting" />
-            </CardMedia>
-            <CardTitle title="TechStack Used" subtitle="Express Node MongoDB POSTMAN" />
-            <CardText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-            </CardText>
-            <CardActions>
-            <RaisedButton primary={true} label="Source Code" />
-            <RaisedButton secondary={true} label="Visit Website" />
-            </CardActions>
-            </Card>
+                    onCloseRequest={() => this.setState({ isOpenOne: false })}
+                    onMovePrevRequest={() => this.setState({
+                      photoIndex: (photoIndexOne + imagesOne.length - 1) % imagesOne.length,
+                    })}
+                    onMoveNextRequest={() => this.setState({
+                      photoIndexOne: (photoIndexOne + 1) % imagesOne.length,
+                    })}
+                  />
+                }
               </div>
-              <div className="col m3"></div>
-            </div>
-            <div>
-              <button
-            type="button"
-            onClick={() => this.setState({ isOpen: true })}
-              >
-            Open Lightbox
-              </button>
+              <div className="col m1"></div>
+              <div className="col m1"></div>
+              <div className="col m4">
+                <Card style={styles.card}>
+                  <CardHeader
+                    title="To Do API"
+                    subtitle="A Project in Nodejs"
+                    avatar={require("../images/postman.png")}
+                  />
+                  <CardMedia>
+                    <img src={todo01} alt="Home" />
+                  </CardMedia>
+                  <CardTitle title="TechStack Used" subtitle="Nodejs, Express, MongoDB" />
+                  <CardText>
+                    <p>* Created A To Do API using Node.js & Express</p>
+                    <p>* Used Mlabs for MongoDB</p>
+                    <p>* Mocha, Supertest, Expect for testing</p>
+                    <p>* POSTMAN for real user experience</p>
+                    <p>* Github for Version Control</p>
+                    <p>* Deployed to heroku</p>
+                    <p>* API Link: 'https://thawing-depths-20269.herokuapp.com/'</p>
+                  </CardText>
+                  <CardActions>
+                    <RaisedButton primary={true} label="Source Code" target="_blank" href="https://github.com/prathameshpm/node-to-do-ppm" />
+                    <RaisedButton secondary={true} label="Screen Shots" onClick={() => this.setState({ isOpenTwo: true })} />
+                  </CardActions>
+                </Card>
+              </div>
+              <div>
+                {isOpenTwo &&
+                  <Lightbox
+                    mainSrc={imagesTwo[photoIndexTwo]}
+                    nextSrc={imagesTwo[(photoIndexTwo + 1) % imagesTwo.length]}
+                    prevSrc={imagesTwo[(photoIndexTwo + imagesTwo.length - 1) % imagesTwo.length]}
 
-              {isOpen &&
-            <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-
-            onCloseRequest={() => this.setState({ isOpen: false })}
-            onMovePrevRequest={() => this.setState({
-            photoIndex: (photoIndex + images.length - 1) % images.length,
-            })}
-            onMoveNextRequest={() => this.setState({
-            photoIndex: (photoIndex + 1) % images.length,
-            })}
-            />
-              }
+                    onCloseRequest={() => this.setState({ isOpenTwo: false })}
+                    onMovePrevRequest={() => this.setState({
+                      photoIndex: (photoIndexTwo + imagesTwo.length - 1) % imagesTwo.length,
+                    })}
+                    onMoveNextRequest={() => this.setState({
+                      photoIndexTwo: (photoIndexTwo + 1) % imagesTwo.length,
+                    })}
+                  />
+                }
+              </div>
+              <div className="col m1"></div>
             </div>
-            </div>
-            <div style={styles.slide}>
-            slide n°3
-            </div>
-            </SwipeableViews>
-            </div>
-          */}
-
+          </div>
         </Animated>
       </div>
     );
