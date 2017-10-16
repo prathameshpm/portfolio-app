@@ -56,7 +56,7 @@ const styles = {
     padding: 10,
   },
   card: {
-    margin: 20,
+    margin: 50,
     padding: 10
   }
 };
@@ -220,7 +220,8 @@ class Portfolio extends Component {
             <div className="row">
               <div className="container">
                 <div className="row">
-                  <div className="col m5">
+                  <div className="col m3"></div>
+                  <div className="col m6">
                     <Card style={styles.card}>
                       <CardHeader
                         title="Realtime Chat App"
