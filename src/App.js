@@ -60,7 +60,7 @@ class App extends Component {
                       title="MENU"
                       iconClassNameRight="muidocs-icon-navigation-expand-more"
                       onLeftIconButtonTouchTap={() => this.setState({open: !this.state.open})}
-                      style={{backgroundColor: '#616161', height: '8vh'}}
+                      style={{backgroundColor: '#616161', height: '8vh', minHeight: '60px'}}
                     />
                   </div>
                 </Animated>
