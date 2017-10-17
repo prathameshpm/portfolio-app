@@ -1,57 +1,85 @@
 import React, { Component } from 'react';
 
-import Snackbar from 'material-ui/Snackbar';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import { Animated } from "react-animated-css";
 
-class MenuItemSix extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      openSnackBar: false,
-    };
-    this.handleTouchTap = this.handleTouchTap.bind(this);
-    this.handleRequestClose = this.handleRequestClose.bind(this);
-  }
+import { compose, withProps, withState, withHandlers } from "recompose";
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+  InfoWindow,
+} from "react-google-maps";
 
-  handleTouchTap = () => {
-    this.setState({
-      openSnackBar: true,
-    });
-  };
+const MapWithControlledZoom = compose(
+  withProps({
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDUCfXC16d1tzr_-PG509mWZyxvUONHNLw&v=3.exp&libraries=geometry,drawing,places",
+    loadingElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `500px` }} />,
+    mapElement: <div style={{ height: `100%` }} />,
+  }),
+  withState('zoom', 'onZoomChange', 10),
+  withHandlers(() => {
+    const refs = {
+      map: undefined,
+    }
 
-  handleRequestClose = () => {
-    this.setState({
-      openSnackBar: false,
-    });
-  };
+    return {
+      onMapMounted: () => ref => {
+        refs.map = ref
+      },
+      onZoomChanged: ({ onZoomChange }) => () => {
+        onZoomChange(refs.map.getZoom())
+      }
+    }
+  }),
+  withScriptjs,
+  withGoogleMap
+)(props =>
+  <GoogleMap
+    defaultCenter={{ lat: 18.446378, lng: 73.832365 }}
+    zoom={props.zoom}
+    ref={props.onMapMounted}
+    onZoomChanged={props.onZoomChanged}
+  >
+    <Marker
+      position={{ lat: 18.446378, lng: 73.832365 }}
+      onClick={props.onToggleOpen}
+    >
+      <InfoWindow onCloseClick={props.onToggleOpen}>
+        <div>
+          {" "}
+          Prathamesh Mahamulkar, Full Stack Developer, Contact No: +918830683797, mahamulkarprathamesh@gmail.com, Controlled zoom: {props.zoom}
+        </div>
+      </InfoWindow>
+    </Marker>
+  </GoogleMap>
+);
 
+class Contact extends Component {
   render() {
     return (
       <div>
+        <Animated animationIn="fadeInUp">
+          <MapWithControlledZoom />
+        </Animated>
         <div className="row">
-          <div className="col m3">
-            <Animated animationIn="fadeInUp">
-              <RaisedButton
-                onClick={this.handleTouchTap}
-                primary={true}
-                label="Click Here to see Snackbar Feature"
-              />
-              <Snackbar
-                open={this.state.openSnackBar}
-                message="This is a Snackbar Feature"
-                autoHideDuration={800}
-                onRequestClose={this.handleRequestClose}
-                style={{textAlign: 'center'}}
-              />
-            </Animated>
-          </div>
+          <Animated animationIn="fadeInDown">
+            <div className="col m3"></div>
+            <div className="col m2">
+              <RaisedButton primary={true} label="See Github Profile" target="_blank" href="https://github.com/prathameshpm" style={{margin: 20}} />
+            </div>
+            <div className="col m2"></div>
+            <div className="col m2">
+              <RaisedButton secondary={true} label="See LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/prathamesh-mahamulkar-66b24a63/" style={{margin: 20}} />
+            </div>
+          </Animated>
         </div>
-
       </div>
     );
   }
 }
 
-export default MenuItemSix;
+export default Contact;
