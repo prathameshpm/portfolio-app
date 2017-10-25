@@ -9,7 +9,10 @@ class Home extends Component {
     super(props);
     var date = new Date();
     var hour = date.getHours();
-    if (hour < 12) {
+    if (hour < 5) {
+      this.state = {welcome: "Hello"};
+    }
+    else if (hour < 12) {
       this.state = {welcome: "Good Morning"};
     }
     else if (hour < 17) {
