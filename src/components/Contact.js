@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import RaisedButton from 'material-ui/RaisedButton';
-
 import { Animated } from "react-animated-css";
 
 import { compose, withProps, withState, withHandlers } from "recompose";
@@ -12,6 +11,8 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
+
+import '../styles/Contact.css';
 
 const MapWithControlledZoom = compose(
   withProps({
@@ -65,17 +66,20 @@ class Contact extends Component {
         <Animated animationIn="fadeInUp">
           <MapWithControlledZoom />
         </Animated>
-        <div className="row">
-          <Animated animationIn="fadeInDown">
-            <div className="col m3"></div>
-            <div className="col m2">
-              <RaisedButton primary={true} label="See Github Profile" target="_blank" href="https://github.com/prathameshpm" style={{margin: 20}} />
+        <div className="contactPageStyle">
+          <div className="container">
+            <div className="row">
+              <Animated animationIn="fadeInDown">
+                <div className="col m4">
+                  <RaisedButton primary={true} label="See Github Profile" target="_blank" href="https://github.com/prathameshpm" style={{margin: 20}} />
+                </div>
+                <div className="col m4"></div>
+                <div className="col m4">
+                  <RaisedButton secondary={true} label="See LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/prathamesh-mahamulkar-66b24a63/" style={{margin: 20}} />
+                </div>
+              </Animated>
             </div>
-            <div className="col m2"></div>
-            <div className="col m2">
-              <RaisedButton secondary={true} label="See LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/prathamesh-mahamulkar-66b24a63/" style={{margin: 20}} />
-            </div>
-          </Animated>
+          </div>
         </div>
       </div>
     );

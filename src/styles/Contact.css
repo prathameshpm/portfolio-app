@@ -1,0 +1,11 @@
+.contactPageStyle {
+  margin: 0;
+  padding: 0;
+  height: 50vh;
+  background-image: url('../images/topography.png');
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

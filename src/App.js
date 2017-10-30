@@ -75,7 +75,7 @@ class App extends Component {
                   >
 
                     <MenuItem disabled={true} style={{textAlign: 'center'}}>
-                      <Avatar src={require('./images/photo_one.jpg')} size={120} style={{marginTop: 25}} />
+                      <Avatar src={require('./images/photo_one.jpg')} size={110} style={{marginTop: 25}} />
                     </MenuItem>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/'>
