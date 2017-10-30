@@ -71,51 +71,51 @@ class App extends Component {
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({open})}
                     zDepth={1}
-                    width={220}
+                    width={200}
                   >
 
                     <MenuItem disabled={true} style={{textAlign: 'center'}}>
-                      <Avatar src={require('./images/photo.jpg')} size={100} style={{marginTop: 25}} />
+                      <Avatar src={require('./images/photo_one.jpg')} size={120} style={{marginTop: 25}} />
                     </MenuItem>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: deepPurple400}} rightIcon={<HomeIcon />}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: deepPurple400}} leftIcon={<HomeIcon color={'#c2a057'}/>}>
                         HOME
                       </MenuItem>
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/portfolio'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: yellowA700}} rightIcon={<Photo />}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: yellowA700}} leftIcon={<Photo color={'#ae00ff'}/>}>
                         PORTFOLIO
                       </MenuItem>
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" target="_blank" to='https://github.com/prathameshpm/portfolio-app'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: red500}} rightIcon={<ContentLink />}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: red500}} leftIcon={<ContentLink color={'#36f468'} />}>
                         SOURCE CODE
                       </MenuItem>
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/resume'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: lightGreen800}} rightIcon={<PictureAsPdf />}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: lightGreen800}} leftIcon={<PictureAsPdf color={'#8b2f55'} />}>
                         RESUME
                       </MenuItem>
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/skills'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: orange800}} rightIcon={<Star />}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: orange800}} leftIcon={<Star color={'#0030ef'}/>}>
                         SKILLS
                       </MenuItem>
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/soontocome'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: purpleA700}} rightIcon={<Forward />}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: purpleA700}} leftIcon={<Forward color={'#ffd500'}/>}>
                         UP NEXT
                       </MenuItem>
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/contact'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: blue500}}  rightIcon={<ContactPhone />}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: blue500}} leftIcon={<ContactPhone color={'#f36e21'} />}>
                         CONTACT
                       </MenuItem>
                     </NavLink>
