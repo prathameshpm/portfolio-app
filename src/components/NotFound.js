@@ -5,7 +5,7 @@ import Home from './Home';
 import Portfolio from './Portfolio';
 import Resume from './Resume';
 import Skills from './Skills';
-import UpNext from './UpNext';
+import Education from './Education';
 import Contact from './Contact';
 
 class NotFound extends Component {
@@ -21,7 +21,7 @@ class NotFound extends Component {
           <NavLink to='/portfolio'><p>PORTFOLIO</p></NavLink>
           <NavLink to='/resume'><p>RESUME</p></NavLink>
           <NavLink to='/skills'><p>SKILLS</p></NavLink>
-          <NavLink to='/soontocome'><p>UP NEXT</p></NavLink>
+          <NavLink to='/education'><p>EDUCATION</p></NavLink>
           <NavLink to='/contact'><p>CONTACT</p></NavLink>
 
           <Switch>
@@ -29,7 +29,7 @@ class NotFound extends Component {
             <Route exact path='/portfolio' component={Portfolio}/>
             <Route exact path='/resume' component={Resume} />
             <Route exact path='/skills' component={Skills} />
-            <Route exact path='/soontocome' component={UpNext} />
+            <Route exact path='/education' component={Education} />
             <Route exact path='/contact' component={Contact} />
           </Switch>
         </div>

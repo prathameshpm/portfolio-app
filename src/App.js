@@ -14,7 +14,7 @@ import Home from './components/Home';
 import Portfolio from './components/Portfolio';
 import Resume from './components/Resume';
 import Skills from './components/Skills';
-import UpNext from './components/UpNext';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 
@@ -24,7 +24,7 @@ import Photo from 'material-ui/svg-icons/image/photo';
 import ContactPhone from 'material-ui/svg-icons/communication/contact-phone';
 import HomeIcon from 'material-ui/svg-icons/action/home';
 import Star from 'material-ui/svg-icons/toggle/star';
-import Forward from 'material-ui/svg-icons/content/forward';
+import School from 'material-ui/svg-icons/social/school';
 
 import {
   blue500,
@@ -108,9 +108,9 @@ class App extends Component {
                       </MenuItem>
                     </NavLink>
 
-                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/soontocome'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: purpleA700}} leftIcon={<Forward color={'#ffd500'}/>}>
-                        UP NEXT
+                    <NavLink className='drawerItemsStyle' activeClassName="active" to='/education'>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: purpleA700}} leftIcon={<School color={'#ffd500'}/>}>
+                        EDUCATION
                       </MenuItem>
                     </NavLink>
 
@@ -127,7 +127,7 @@ class App extends Component {
                     <Route exact path='/portfolio' component={Portfolio}/>
                     <Route exact path='/resume' component={Resume} />
                     <Route exact path='/skills' component={Skills} />
-                    <Route exact path='/soontocome' component={UpNext} />
+                    <Route exact path='/education' component={Education} />
                     <Route exact path='/contact' component={Contact} />
                     <Route component={NotFound}/>
                   </Switch>
