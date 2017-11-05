@@ -19,7 +19,7 @@ import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 
 import ContentLink from 'material-ui/svg-icons/content/link';
-import PictureAsPdf from 'material-ui/svg-icons/image/picture-as-pdf';
+import Image from 'material-ui/svg-icons/image/image';
 import Photo from 'material-ui/svg-icons/image/photo';
 import ContactPhone from 'material-ui/svg-icons/communication/contact-phone';
 import HomeIcon from 'material-ui/svg-icons/action/home';
@@ -97,7 +97,7 @@ class App extends Component {
                     </NavLink>
 
                     <NavLink className='drawerItemsStyle' activeClassName="active" to='/resume'>
-                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: lightGreen800}} leftIcon={<PictureAsPdf color={'#8b2f55'} />}>
+                      <MenuItem onClick={this.handleClose} style={{fontWeight: 'bold', color: lightGreen800}} leftIcon={<Image color={'#8b2f55'} />}>
                         RESUME
                       </MenuItem>
                     </NavLink>
