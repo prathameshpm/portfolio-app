@@ -41,7 +41,7 @@ class Resume extends Component {
             <div className="col m3">
               <Animated animationIn="fadeInDown">
                 <a href={require("../documents/MyResume.pdf")} download="MyResume">
-                  <i className="large material-icons downloadIcon">file_download</i>
+                  <i className="large material-icons downloadIcon" style={{color: "green"}}>file_download</i>
                 </a>
               </Animated>
             </div>
