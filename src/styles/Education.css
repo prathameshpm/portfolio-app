@@ -1,6 +1,18 @@
 .educationPageStyle {
   margin: 0;
   padding: 0;
-  height: auto;
+  height: 92vh;
   background-image: url('../images/gridme.png');
+}
+
+h3 {
+  font-stretch: expanded;
+  font-family: 'Sevillana', cursive;
+  font-style: italic;
+  font-size: 4em;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  color: green;
 }

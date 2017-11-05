@@ -25,7 +25,6 @@ class Resume extends Component {
       <div className="resumePageStyle">
         <div className="container">
           <div className="row">
-            <div className="col m1"></div>
             <div className="col m3">
               <Animated animationIn="fadeInRight">
                 <RaisedButton default={true} primary={true} label="See Resume Now" onClick={() => this.setState({ isOpenOne: true })} />
@@ -49,6 +48,11 @@ class Resume extends Component {
             <div className="col m3">
               <Animated animationIn="fadeInLeft">
                 <RaisedButton default={true} secondary={true} label="LinkedIn Porfile" target="_blank" href="https://www.linkedin.com/in/prathamesh-mahamulkar-66b24a63/" />
+              </Animated>
+            </div>
+            <div className="col m3">
+              <Animated animationIn="fadeInUp">
+                <RaisedButton label="Github Profile" target="_blank" href="https://github.com/prathameshpm" backgroundColor="yellow" />
               </Animated>
             </div>
           </div>
