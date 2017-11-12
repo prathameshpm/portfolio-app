@@ -40,19 +40,19 @@ const MapWithControlledZoom = compose(
   withGoogleMap
 )(props =>
   <GoogleMap
-    defaultCenter={{ lat: 18.446378, lng: 73.832365 }}
+    defaultCenter={{ lat: 18.5204, lng: 73.8567 }}
     zoom={props.zoom}
     ref={props.onMapMounted}
     onZoomChanged={props.onZoomChanged}
   >
     <Marker
-      position={{ lat: 18.446378, lng: 73.832365 }}
+      position={{ lat: 18.5204, lng: 73.8567 }}
       onClick={props.onToggleOpen}
     >
       <InfoWindow onCloseClick={props.onToggleOpen}>
         <div>
           {" "}
-          Prathamesh Mahamulkar, Full Stack Developer, Contact No: +918830683797, mahamulkarprathamesh@gmail.com, Controlled zoom: {props.zoom}
+          Pune, Maharashtra, Controlled zoom: {props.zoom}
         </div>
       </InfoWindow>
     </Marker>
