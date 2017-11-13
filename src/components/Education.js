@@ -29,6 +29,10 @@ class Education extends Component {
                 <div className="collapsible-header"><i className="material-icons" style={{color: "#0453f2"}} >laptop_mac</i><span style={{color: "#F2A104", fontSize: "1.49em"}}>NodeJS</span></div>
                 <div className="collapsible-body"><span><h3>Udemy</h3><br /><h5>The Complete Node Developer Course | September 2017</h5><img src={require('../images/NodeJScert.jpg')} alt="NodeJS Certificate" /></span></div>
               </li>
+              <li>
+                <div className="collapsible-header"><i className="material-icons" style={{color: "#0453f2"}} >laptop_mac</i><span style={{color: "#F2A104", fontSize: "1.52em"}}>Internship Certificate</span></div>
+                <div className="collapsible-body"><span><h3>Internshala</h3><br /><img src={require('../images/InternshipCert.jpg')} alt="Internship Certificate" /></span></div>
+              </li>
             </ul>
             <p>* Please refresh page and then click on tabs to see details</p>
           </div>
